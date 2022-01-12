@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-sm bg-dark">
+
+    <!-- Links -->
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link text-light" routerLink="" *ngIf="!service.loggedIn()">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" routerLink="Register" *ngIf="!service.loggedIn()">Register</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" routerLink="Register" *ngIf="service.loggedIn()" (click)="service.logoutUser()">logout</a>
+      </li>
+    </ul>
+  
+</nav>
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
